@@ -130,7 +130,7 @@ class _GameSetupPageState extends State<GameSetupPage> {
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
-                      children: [7, 10, 15, 30].map((value) {
+                      children: [7, 10, 15, 30, 60].map((value) {
                         return ChoiceChip(
                           label: Text('$value s'),
                           selected: timerSeconds == value,

@@ -133,7 +133,7 @@ class _BotGameSetupPageState extends State<BotGameSetupPage> {
                             spacing: 8,
                             runSpacing: 8,
                             alignment: WrapAlignment.center,
-                            children: [7, 10, 15, 30].map((value) {
+                            children: [7, 10, 15, 30, 60].map((value) {
                               return ChoiceChip(
                                 label: Text('$value s'),
                                 selected: timerSeconds == value,
