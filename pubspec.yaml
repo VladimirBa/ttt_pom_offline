@@ -1,0 +1,26 @@
+name: ttt_pom
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <4.0.0'  # Обновлено для явной поддержки null safety
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #uuid: ^3.0.6
+  uuid: ^4.5.0
+  share_plus: ^7.0.2
+  web_socket_channel: ^3.0.1
+  clipboard: ^0.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0  # Добавлено для линтинга, если нужно
+
+flutter:
+  uses-material-design: true
