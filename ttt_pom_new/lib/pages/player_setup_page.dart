@@ -5,15 +5,7 @@ import '../widgets/neon_button.dart';
 
 class PlayerSetupPage extends StatefulWidget {
   final bool isBotGame;
-  final String? initialPlayer1Name;
-  final String? initialPlayer2Name;
-
-  const PlayerSetupPage({
-    super.key,
-    required this.isBotGame,
-    this.initialPlayer1Name,
-    this.initialPlayer2Name,
-  });
+  const PlayerSetupPage({super.key, required this.isBotGame});
 
   @override
   State<PlayerSetupPage> createState() => _PlayerSetupPageState();
@@ -25,17 +17,12 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
   int botDifficulty = 1;
   String? _errorMessage;
   bool _showError = false;
-  final int _maxLength = 12;
+  final int _maxLength = 12; // Добавляем константу для максимальной длины
 
   @override
   void initState() {
     super.initState();
-    if (widget.initialPlayer1Name != null) {
-      _player1Controller.text = widget.initialPlayer1Name!;
-    }
-    if (widget.initialPlayer2Name != null) {
-      _player2Controller.text = widget.initialPlayer2Name!;
-    }
+    // Слушатели для обновления состояния при изменении текста
     _player1Controller.addListener(() {
       setState(() {});
       _updateErrorState();
@@ -73,7 +60,10 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.grey, Colors.white],
+            colors: [
+              Colors.grey,
+              Colors.white,
+            ],
           ),
         ),
         child: SafeArea(
@@ -131,8 +121,6 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                     const SizedBox(height: 10),
                     TextField(
                       controller: _player1Controller,
-                      enabled: widget.initialPlayer1Name == null,
-                      readOnly: widget.initialPlayer1Name != null,
                       decoration: InputDecoration(
                         label: RichText(
                           text: TextSpan(
@@ -142,19 +130,21 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                                 text: 'Player 1 Name ',
                               ),
                               TextSpan(
-                                text: '(Turn first, ',
-                                style: TextStyle(fontSize: 12),
+                                text: '(Default: Turn first, ',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
+
                               ),
                               TextSpan(
                                 text: 'Red',
                                 style: TextStyle(
                                   fontSize: 12,
+                                  fontWeight: FontWeight.bold,
                                   color: Colors.red,
                                 ),
                               ),
                               TextSpan(
                                 text: ', X)',
-                                style: TextStyle(fontSize: 12),
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
                               ),
                             ],
                           ),
@@ -167,7 +157,7 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                           color: Colors.grey,
                           fontSize: 12,
                         ),
-                        counterText: '',
+                        counterText: '', // Убираем счётчик справа ниже
                       ),
                       maxLength: _maxLength,
                       style: TextStyle(
@@ -175,14 +165,13 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                         fontFamily: 'Roboto',
                       ),
                       onChanged: (value) {
-                        setState(() {});
+                        setState(() {}); // Обновляем UI при изменении текста
                       },
                     ),
                     const SizedBox(height: 10),
                     if (!widget.isBotGame)
                       TextField(
                         controller: _player2Controller,
-                        enabled: true,
                         decoration: InputDecoration(
                           label: RichText(
                             text: TextSpan(
@@ -192,19 +181,20 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                                   text: 'Player 2 Name ',
                                 ),
                                 TextSpan(
-                                  text: '(Turn next, ',
-                                  style: TextStyle(fontSize: 12),
+                                  text: '(Default: Turn next, ',
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
                                 ),
                                 TextSpan(
                                   text: 'Blue',
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.blue,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ', O)',
-                                  style: TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
                                 ),
                               ],
                             ),
@@ -217,7 +207,7 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                             color: Colors.grey,
                             fontSize: 12,
                           ),
-                          counterText: '',
+                          counterText: '', // Убираем счётчик справа ниже
                         ),
                         maxLength: _maxLength,
                         style: TextStyle(
@@ -225,7 +215,7 @@ class _PlayerSetupPageState extends State<PlayerSetupPage> {
                           fontFamily: 'Roboto',
                         ),
                         onChanged: (value) {
-                          setState(() {});
+                          setState(() {}); // Обновляем UI при изменении текста
                         },
                       ),
                     if (widget.isBotGame)

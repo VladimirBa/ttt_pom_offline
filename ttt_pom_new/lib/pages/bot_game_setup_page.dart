@@ -133,7 +133,7 @@ class _BotGameSetupPageState extends State<BotGameSetupPage> {
                             spacing: 8,
                             runSpacing: 8,
                             alignment: WrapAlignment.center,
-                            children: [7, 10, 15, 30].map((value) {
+                            children: [7, 10, 15, 30, 60].map((value) {
                               return ChoiceChip(
                                 label: Text('$value s'),
                                 selected: timerSeconds == value,
@@ -168,7 +168,7 @@ class _BotGameSetupPageState extends State<BotGameSetupPage> {
                           width: screenWidth * 0.7 < 300 ? 300 : screenWidth * 0.7,
                           height: 50,
                           child: NeonButton(
-                            text: 'Custom/Traditional Setup',
+                            text: 'Custom/Classic Setup',
                             icon: Icons.settings,
                             onPressed: () {
                               Navigator.push(
@@ -179,7 +179,7 @@ class _BotGameSetupPageState extends State<BotGameSetupPage> {
                                     player2Name: 'Bot',
                                     isBotGame: true,
                                     botDifficulty: widget.botDifficulty,
-                                    title: 'Bot Game Custom/Traditional Setup',
+                                    title: 'Bot Game Custom/Classic Setup',
                                     rounds: rounds,
                                     timeLimit: timerSeconds,
                                     winCondition: winCondition, // Передаем winCondition

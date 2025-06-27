@@ -92,7 +92,7 @@ class TournamentResultsPage extends StatelessWidget {
                       Text(
                         '$player1Name: $player1Score',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Roboto',
                           color: player1Color, // Используем кастомный цвет
                           fontWeight: FontWeight.bold,
@@ -104,7 +104,7 @@ class TournamentResultsPage extends StatelessWidget {
                       Text(
                         '$player2Name: $player2Score',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Roboto',
                           color: player2Color, // Используем кастомный цвет
                         ),
@@ -120,7 +120,7 @@ class TournamentResultsPage extends StatelessWidget {
                               ? '$player2Name WINS the Tournament!'
                               : 'Draw!',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Roboto',
                             color: Colors.yellowAccent,

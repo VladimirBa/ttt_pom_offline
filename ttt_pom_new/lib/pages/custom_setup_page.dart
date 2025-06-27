@@ -115,9 +115,9 @@ class _CustomSetupPageState extends State<CustomSetupPage> {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        const Text(
-                          'Player 1 Color',
-                          style: TextStyle(
+                        Text(
+                          '${widget.player1Name} Color',
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Roboto',
@@ -150,7 +150,7 @@ class _CustomSetupPageState extends State<CustomSetupPage> {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          widget.isBotGame ? 'Bot Color' : 'Player 2 Color',
+                          widget.isBotGame ? 'Bot Color' : '${widget.player2Name} Color',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -256,7 +256,7 @@ class _CustomSetupPageState extends State<CustomSetupPage> {
                           width: screenWidth * 0.7 < 300 ? 300 : screenWidth * 0.7,
                           height: 50,
                           child: NeonButton(
-                            text: 'Start Traditional Game',
+                            text: 'Start Classic Game',
                             icon: Icons.play_arrow,
                             onPressed: () {
                               Navigator.push(

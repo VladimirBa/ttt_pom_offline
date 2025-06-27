@@ -33,11 +33,11 @@ class GameHeaderWidget extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 2),
       child: Center(
         child: Container(
           width: boardSize,
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(6.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16.0),
@@ -60,7 +60,7 @@ class GameHeaderWidget extends StatelessWidget {
                   fontFamily: 'Roboto',
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 2),
               Text(
                 player1Name,
                 style: TextStyle(
@@ -97,7 +97,7 @@ class GameHeaderWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 4),
+              const SizedBox(height: 2),
               Text(
                 player2Name,
                 style: TextStyle(
@@ -115,7 +115,7 @@ class GameHeaderWidget extends StatelessWidget {
                 '$player1Score - $player2Score',
                 style: const TextStyle(fontSize: 16, fontFamily: 'Roboto'),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 2),
               AnimatedOpacity(
                 opacity: 1.0,
                 duration: const Duration(milliseconds: 300),
@@ -124,7 +124,7 @@ class GameHeaderWidget extends StatelessWidget {
                     Text(
                       "Now it's ${currentPlayer == 1 ? player1Name : player2Name}'s turn",
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 11,
                         color: currentPlayer == 1 ? player1Color : player2Color,
                         fontFamily: 'Roboto',
                       ),
